@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jordan/core/app_theme.dart';
 import 'package:jordan/screens/dashboard.dart';
 
 void main() {
@@ -14,9 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Shop Flow',
-      theme: ThemeData(
-           colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: AppTheme.lightTheme,
      home: Dashboard(),
     );
   }
