@@ -51,7 +51,40 @@ class ProductService {
         description: 'Comfortable Running Shoe',
         price: 120,
         imageUrl:
-            'https://i.pinimg.com/736x/d0/96/14/d096149da4340c211c0a20f244fd5e12.jpg',
+       'https://i.pinimg.com/1200x/68/0e/d4/680ed40b5d09b9fefb0deb4a2fd2a6f0.jpg',
+
+      ),
+            Product(
+        id: 7,
+        name: 'Addidas UltraBoost ',
+        description: 'Premium Running Shoe',
+        price: 150,
+        imageUrl:
+            'https://i.pinimg.com/736x/59/21/fb/5921fbe14b0bc5ca00b33da79335824a.jpg',
+      ),
+            Product(
+        id: 8,
+        name: 'Addidas UltraBoost ',
+        description: 'Premium Running Shoe',
+        price: 150,
+        imageUrl:
+            'https://i.pinimg.com/736x/59/21/fb/5921fbe14b0bc5ca00b33da79335824a.jpg',
+      ),
+            Product(
+        id: 9,
+        name: 'Addidas UltraBoost ',
+        description: 'Premium Running Shoe',
+        price: 150,
+        imageUrl:
+            'https://i.pinimg.com/736x/59/21/fb/5921fbe14b0bc5ca00b33da79335824a.jpg',
+      ),
+            Product(
+        id: 10,
+        name: 'Addidas UltraBoost ',
+        description: 'Premium Running Shoe',
+        price: 150,
+        imageUrl:
+            'https://i.pinimg.com/736x/59/21/fb/5921fbe14b0bc5ca00b33da79335824a.jpg',
       ),
     ];
   }

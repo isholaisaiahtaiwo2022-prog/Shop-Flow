@@ -1,5 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
-
 import 'package:flutter/material.dart';
 import 'package:jordan/model/product.dart';
 
@@ -85,31 +83,26 @@ class _ProductCardState extends State<ProductCard> {
                           });
                         },
 
-
                         child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
+                          duration: const Duration(milliseconds: 200),
 
-                        width: 38,
-                        height: 38,
+                          width: 38,
+                          height: 38,
 
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.92),
-                          shape: BoxShape.circle,
-                        ),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.92),
+                            shape: BoxShape.circle,
+                          ),
 
+                          child: Icon(
+                            _isFavorite
+                                ? Icons.favorite_rounded
+                                : Icons.favorite_border_rounded,
 
-                        child: Icon (
-                          _isFavorite ? Icons.favorite_rounded
-                          : Icons.favorite_border_rounded,
+                            color: _isFavorite ? Colors.red : Colors.black87,
 
-
-                        color: _isFavorite
-                        ? Colors.red
-                        : Colors.black87,
-
-                        size: 20,
-                        ),
-
+                            size: 20,
+                          ),
                         ),
                       ),
                     ),
@@ -120,12 +113,7 @@ class _ProductCardState extends State<ProductCard> {
               Expanded(
                 flex: 4,
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(
-                    14, 
-                    12, 
-                    14, 
-                    10
-                  ),
+                  padding: const EdgeInsets.fromLTRB(14, 12, 14, 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
 
@@ -133,25 +121,23 @@ class _ProductCardState extends State<ProductCard> {
                       Text(
                         widget.product.name,
                         maxLines: 1,
-                        overflow:TextOverflow.ellipsis,
+                        overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
 
-                      const  SizedBox(height: 5,),
-
-
+                      const SizedBox(height: 5),
 
                       Text(
                         widget.product.description,
                         maxLines: 1,
-                        overflow:TextOverflow.ellipsis,
+                        overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
                           fontSize: 12.5,
                           color: Colors.grey,
-                        )
+                        ),
                       ),
 
                       const Spacer(),
@@ -159,15 +145,15 @@ class _ProductCardState extends State<ProductCard> {
                       Text(
                         '\$${widget.product.price.toStringAsFixed(0)}',
                         style: const TextStyle(
-                          fontSize: 21,
+                          fontSize: 20,
                           fontWeight: FontWeight.w800,
-                          color: Color(0xFF149B58)
+                          color: Color(0xFF149B58),
                         ),
-                      )
+                      ),
                     ],
                   ),
-                )
-              )
+                ),
+              ),
             ],
           ),
         ),
