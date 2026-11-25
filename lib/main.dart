@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:jordan/core/app_theme.dart';
 import 'package:jordan/screens/dashboard.dart';
+import 'package:jordan/services/app_state.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(appState: AppState()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final AppState appState;
+
+  const MyApp({super.key, required this.appState});
 
   // This widget is the root of your application.
   @override
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Shop Flow',
       theme: AppTheme.lightTheme,
-     home: Dashboard(),
+      home: Dashboard(appState: appState),
     );
   }
 }

@@ -4,8 +4,16 @@ import 'package:jordan/model/product.dart';
 class ProductCard extends StatefulWidget {
   final Product product;
   final VoidCallback? onTap;
+  final VoidCallback? onFavoriteTap;
+  final bool isFavorite;
 
-  const ProductCard({super.key, required this.product, this.onTap});
+  const ProductCard({
+    super.key,
+    required this.product,
+    this.onTap,
+    this.onFavoriteTap,
+    this.isFavorite = false,
+  });
 
   @override
   State<ProductCard> createState() => _ProductCardState();
@@ -13,7 +21,6 @@ class ProductCard extends StatefulWidget {
 
 class _ProductCardState extends State<ProductCard> {
   bool _isPressed = false;
-  bool _isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +54,7 @@ class _ProductCardState extends State<ProductCard> {
             borderRadius: BorderRadius.circular(22),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.09),
+                color: Colors.black.withValues(alpha: 0.09),
                 blurRadius: 15,
                 offset: const Offset(0, 7),
               ),
@@ -78,9 +85,7 @@ class _ProductCardState extends State<ProductCard> {
                       right: 10,
                       child: GestureDetector(
                         onTap: () {
-                          setState(() {
-                            _isFavorite = !_isFavorite;
-                          });
+                          widget.onFavoriteTap?.call();
                         },
 
                         child: AnimatedContainer(
@@ -90,16 +95,18 @@ class _ProductCardState extends State<ProductCard> {
                           height: 38,
 
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.92),
+                            color: Colors.white.withValues(alpha: 0.92),
                             shape: BoxShape.circle,
                           ),
 
                           child: Icon(
-                            _isFavorite
+                            widget.isFavorite
                                 ? Icons.favorite_rounded
                                 : Icons.favorite_border_rounded,
 
-                            color: _isFavorite ? Colors.red : Colors.black87,
+                            color: widget.isFavorite
+                                ? Colors.red
+                                : Colors.black87,
 
                             size: 20,
                           ),
